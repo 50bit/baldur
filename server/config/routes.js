@@ -1,5 +1,6 @@
 import UserController from './../src/controllers/UserController';
 import MessagesController from './../src/controllers/MessagesController';
+import RepliesController from './../src/controllers/RepliesController';
 import passport from 'passport';
 import './passport';
 
@@ -44,11 +45,11 @@ export default (server) => {
   server.get(
     `/api/replies`,
     passport.authenticate('jwt', { session: false }),
-    Replies.getAll,
+    RepliesController.getAll,
   );
   server.post(
     `/api/messages`,
     passport.authenticate('jwt', { session: false }),
-    Replies.insert,
+    RepliesController.insert,
   );
 };
