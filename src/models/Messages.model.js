@@ -2,9 +2,6 @@ import mongoose, { Schema } from 'mongoose';
 import Replies from './Replies.model';
 import User from './User.model';
 
-const replies = new Replies().getInstance().schema;
-const user = new User().getInstance().schema;
-
 class Messages {
   initSchema() {
     const schema = new Schema({
@@ -13,11 +10,13 @@ class Messages {
         required: true,
       },
       timestamp: {
+        type: Date,
+        default: Date.now(),
+      },
+      user: {
         type: String,
         required: true,
       },
-      replies: [replies],
-      user: user,
     });
     mongoose.model('Messages', schema);
   }

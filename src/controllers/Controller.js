@@ -15,6 +15,9 @@ class Controller {
   async get(req, res) {
     const { id } = req.params;
     const response = await this.service.get(id);
+    if (response.data.hasOwnProperty('password')) {
+      delete response.data.password;
+    }
     if (response.error) return res.status(response.statusCode).send(response);
     return res.status(200).send(response);
   }

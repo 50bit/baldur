@@ -8,6 +8,7 @@ class Service {
     this.update = this.update.bind(this);
     this.delete = this.delete.bind(this);
     this.get = this.get.bind(this);
+    this.findOne = this.findOne.bind(this);
   }
 
   async getAll(query) {
@@ -42,6 +43,31 @@ class Service {
         error: true,
         statusCode: 500,
         errors,
+      };
+    }
+  }
+
+  async findOne(obj) {
+    try {
+      const item = await this.model.findOne(obj);
+      if (!item) {
+        return {
+          error: false,
+          statusCode: 401,
+          data: {},
+        };
+      } else {
+        return {
+          error: false,
+          statusCode: 200,
+          data: item,
+        };
+      }
+    } catch (error) {
+      return {
+        error: true,
+        statusCode: 500,
+        error,
       };
     }
   }

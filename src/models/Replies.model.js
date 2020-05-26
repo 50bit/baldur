@@ -1,10 +1,8 @@
 import mongoose, { Schema } from 'mongoose';
 import User from './User.model';
 
-const user = new User().getInstance().schema;
-
 class Replies {
-  intiSchema() {
+  initSchema() {
     const schema = new Schema({
       message: {
         type: String,
@@ -14,13 +12,12 @@ class Replies {
         type: String,
         required: true,
       },
-      user: user,
     });
     mongoose.model('replies', schema);
   }
 
   getInstance() {
-    this.intiSchema();
+    this.initSchema();
     return mongoose.model('replies');
   }
 }
