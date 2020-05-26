@@ -4,6 +4,10 @@ import User from './User.model';
 class Replies {
   initSchema() {
     const schema = new Schema({
+      reply: {
+        type: String,
+        required: true,
+      },
       message: {
         type: String,
         required: true,

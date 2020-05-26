@@ -4,10 +4,10 @@ import Messages from '../models/Messages.model';
 
 const messageService = new MessageService(new Messages().getInstance());
 
-class UserController extends Controller {
+class MessagesController extends Controller {
   constructor(service) {
     super(service);
   }
 }
 
-export default new UserController(messageService);
+export default new MessagesController(messageService);

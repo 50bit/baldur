@@ -5,23 +5,50 @@ import './passport';
 
 export default (server) => {
   // User ROUTES
-  server.get(`/api/user`, UserController.getAll);
-  //   server.get(`/api/post/:params`, UserController.get);
   server.get(
     `/api/user/:id`,
     passport.authenticate('jwt', { session: false }),
     UserController.get,
   );
-  server.post(`/api/user`, UserController.insert);
-  server.put(`/api/user/:id`, UserController.update);
-  server.delete(`/api/user/:id`, UserController.delete);
-
   server.post(`/api/user/register`, UserController.register);
   server.post(`/api/user/login`, UserController.login);
+
   // Message ROUTES
-  server.get(`/api/messages`, MessagesController.getAll);
-  server.get(`/api/messages/:id`, MessagesController.get);
-  server.post(`/api/messages`, MessagesController.insert);
-  server.put(`/api/messages/:id`, MessagesController.update);
-  server.delete(`/api/messages/:id`, MessagesController.delete);
+  server.get(
+    `/api/messages`,
+    passport.authenticate('jwt', { session: false }),
+    MessagesController.getAll,
+  );
+  server.get(
+    `/api/messages/:id`,
+    passport.authenticate('jwt', { session: false }),
+    MessagesController.get,
+  );
+  server.post(
+    `/api/messages`,
+    passport.authenticate('jwt', { session: false }),
+    MessagesController.insert,
+  );
+  server.put(
+    `/api/messages/:id`,
+    passport.authenticate('jwt', { session: false }),
+    MessagesController.update,
+  );
+  server.delete(
+    `/api/messages/:id`,
+    passport.authenticate('jwt', { session: false }),
+    MessagesController.delete,
+  );
+
+  // Message ROUTES
+  server.get(
+    `/api/replies`,
+    passport.authenticate('jwt', { session: false }),
+    Replies.getAll,
+  );
+  server.post(
+    `/api/messages`,
+    passport.authenticate('jwt', { session: false }),
+    Replies.insert,
+  );
 };
