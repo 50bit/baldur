@@ -1,5 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
-
+body {
+  background-color: #282c34;
+}
 .App {
   text-align: center;
 }
@@ -37,4 +39,220 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.panel-google-plus {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+  padding: 20px 15px 10px 15px;
+  background-color: #212529;
+  box-shadow: 0px 0px 20px 0px #111315;
+}
+.panel-google-plus > .dropdown {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+.panel-google-plus > .dropdown > span > span {
+  font-size: 10px;
+}
+.panel-google-plus > .dropdown > .dropdown-menu {
+  left: initial;
+  right: 0px;
+  border-radius: 2px;
+}
+
+.panel-google-plus > .panel-heading,
+.panel-google-plus > .panel-footer {
+  border-width: 0px;
+  color: #ffffff;
+}
+.panel-google-plus > .panel-heading {
+  padding-bottom: 5px;
+}
+.panel-google-plus > .panel-heading > img {
+  margin-right: 15px;
+}
+.panel-google-plus > .panel-heading > h3 {
+  margin: 0px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.panel-google-plus > .panel-heading > h5 {
+  color: rgb(153, 153, 153);
+  font-size: 12px;
+  font-weight: 400;
+}
+.panel-google-plus > .panel-body {
+  padding-top: 5px;
+  font-size: 13px;
+  color: #ffffff;
+}
+.panel-google-plus > .panel-body > .panel-google-plus-image {
+  display: block;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(217, 217, 217);
+}
+.panel-google-plus > .panel-body > .panel-google-plus-image > img {
+  max-width: 100%;
+}
+
+.panel-google-plus > .panel-footer {
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 54px;
+}
+.panel-google-plus > .panel-footer > .btn {
+  float: left;
+  margin-right: 8px;
+}
+.input-placeholder,
+.form-control,
+.form-control:focus {
+  display: block;
+  color: rgb(153, 153, 153);
+  font-size: 12px;
+  font-weight: 400;
+  padding: 8px 6px 7px;
+  border: none;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+  background-color: #343a40;
+}
+.panel-google-plus.panel-google-plus-show-comment
+  > .panel-footer
+  > .input-placeholder {
+  display: none;
+}
+.panel-google-plus > .panel-google-plus-comment {
+  display: none;
+  padding: 10px 20px 15px;
+  border-top: 1px solid rgb(229, 229, 229);
+  background-color: rgb(245, 245, 245);
+}
+.panel-google-plus.panel-google-plus-show-comment > .panel-google-plus-comment {
+  display: block;
+}
+/*.panel-google-plus > .panel-google-plus-comment > img {
+  float: left;   
+}*/
+.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea {
+  float: right;
+  width: calc(100% - 56px);
+}
+.panel-google-plus
+  > .panel-google-plus-comment
+  > .panel-google-plus-textarea
+  > textarea {
+  display: block;
+  /*margin-left: 60px;
+  width: calc(100% - 56px);*/
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(217, 217, 217);
+  box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+  resize: vertical;
+}
+.panel-google-plus
+  > .panel-google-plus-comment
+  > .panel-google-plus-textarea
+  > .btn {
+  margin-top: 10px;
+  margin-right: 8px;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .panel-google-plus
+    > .panel-google-plus-comment
+    > .panel-google-plus-textarea
+    > .btn {
+    width: auto;
+  }
+}
+
+.panel-google-plus .btn {
+  border-radius: 3px;
+}
+.panel-google-plus .btn-default {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+  background-color: #121417;
+  color: #999999;
+  font-size: 14px;
+  height: 36px;
+  width: 100%;
+}
+.panel-google-plus .btn-default:hover,
+.panel-google-plus .btn-default:focus,
+.panel-google-plus .btn-default:active {
+  border-color: none;
+}
+.panel-footer {
+  padding: 10px 0px;
+}
+.dropdown-toggle {
+  color: #999999;
+}
+.panel-footer textarea {
+  height: 36px;
+  resize: none;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.dropdown-menu {
+  background-color: #282c34;
+  border-radius: 5px !important;
+  border-color: #d8d8d8;
+}
+.dropdown-menu li .menuItem {
+  color: #ffffff;
+  padding: 0px 10px;
+  font-size: 14px;
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.iconContainer {
+  float: right;
+  padding-right: 10px;
+}
+.delete {
+  color: #dc3545 !important;
+}
+.edit {
+  color: #28a745 !important;
+}
+
+.Navbar nav {
+  background-color: #212529 !important;
+  margin-bottom: 50px;
+  box-shadow: 0px 1px 6px 0px #111315;
+}
+.Navbar .btn-add,
+.Navbar .btn-add:hover,
+.Navbar .btn-add:active {
+  color: #999999;
+  border: 1px solid #999999;
+  font-size: 14px;
+}
+.nav-link {
+  color: #999999 !important;
+  transition: all 0.4s ease;
+}
+.nav-link:hover {
+  color: #ffffff !important;
+}
+.nav-item.active .nav-link {
+  color: #ffffff !important;
+}
+.btn-custom {
+  width: max-content !important;
+  float: right !important;
+}
+.customTextArea {
+  min-height: 150px !important;
 }
