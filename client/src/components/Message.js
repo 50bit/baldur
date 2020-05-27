@@ -9,7 +9,7 @@ class Message extends React.Component {
     this.state = {
       timeStamp: new Date().toISOString(),
       message: '',
-      user: JSON.parse(localStorage.user)._id || '',
+      user: JSON.parse(localStorage.user) || '',
     };
 
     this.handleChangeField = this.handleChangeField.bind(this);

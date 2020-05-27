@@ -9,6 +9,7 @@ class Controller {
   }
 
   async getAll(req, res) {
+    console.log('req.query', req.query);
     return res.status(200).send(await this.service.getAll(req.query));
   }
 
